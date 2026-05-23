@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Japanese Unit 6 Study Guide 🇯🇵</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f8f7f4;--surface:#fff;--surface2:#f3f2ef;
+  --border:#e5e3dc;--border2:#ccc8be;
+  --text:#1a1a1a;--text2:#666;--text3:#999;
+  --blue:#2563eb;--blue-bg:#eff6ff;--blue-border:#bfdbfe;--blue-text:#1d4ed8;
+  --green:#16a34a;--green-bg:#f0fdf4;--green-border:#bbf7d0;--green-text:#15803d;
+  --red:#dc2626;--red-bg:#fef2f2;--red-border:#fecaca;--red-text:#b91c1c;
+  --amber:#d97706;--amber-bg:#fffbeb;--amber-border:#fed7aa;--amber-text:#b45309;
+  --radius:10px;--radius-lg:14px;
+}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+.jp{font-family:'Noto Sans JP',sans-serif}
+header{background:var(--surface);border-bottom:1px solid var(--border);padding:1rem 1.5rem;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100}
+header h1{font-size:18px;font-weight:600;font-family:'Noto Sans JP',sans-serif}
+header span{font-size:13px;color:var(--text2);margin-left:auto}
+.tabs{display:flex;gap:4px;padding:1rem 1.5rem 0;overflow-x:auto;border-bottom:1px solid var(--border);background:var(--surface)}
+.tab{padding:9px 16px;border:none;border-bottom:3px solid transparent;cursor:pointer;font-size:13px;font-weight:500;background:none;color:var(--text2);white-space:nowrap;transition:.15s;font-family:'Inter',sans-serif}
+.tab:hover{color:var(--text)}
+.tab.on{color:var(--blue);border-bottom-color:var(--blue)}
+.content{max-width:760px;margin:0 auto;padding:1.5rem}
+.sec{display:none}.sec.on{display:block}
+.pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1.25rem}
+.pill{padding:5px 14px;border:1px solid var(--border2);border-radius:999px;cursor:pointer;font-size:12px;font-weight:500;background:var(--surface);color:var(--text2);transition:.15s;font-family:'Inter',sans-serif}
+.pill.on{background:var(--blue-bg);color:var(--blue-text);border-color:var(--blue-border)}
+.pill:hover:not(.on){background:var(--surface2)}
+.btn{padding:8px 16px;border:1px solid var(--border2);border-radius:var(--radius);cursor:pointer;font-size:13px;font-weight:500;background:var(--surface);color:var(--text);transition:.15s;font-family:'Inter',sans-serif;display:inline-flex;align-items:center;gap:6px}
+.btn:hover{background:var(--surface2)}.btn:active{transform:scale(.98)}
+.btn-p{background:var(--blue);color:#fff;border-color:var(--blue)}.btn-p:hover{background:#1d4ed8}
+.btn-s{background:var(--green);color:#fff;border-color:var(--green)}.btn-s:hover{background:#15803d}
+.ibox{padding:14px 16px;background:var(--blue-bg);border:1px solid var(--blue-border);border-radius:var(--radius);font-size:13px;color:var(--blue-text);margin-bottom:1.25rem;line-height:1.8}
+.ibox strong{font-weight:600}
+.badge{font-size:10px;font-weight:600;padding:2px 7px;border-radius:999px;letter-spacing:.3px}
+.b1{background:var(--blue-bg);color:var(--blue-text)}.b2{background:var(--amber-bg);color:var(--amber-text)}.b3{background:var(--red-bg);color:var(--red-text)}
+.fc-wrap{perspective:1000px;height:200px;cursor:pointer;margin:1rem 0;user-select:none}
+.fc-inner{position:relative;height:100%;transition:transform .45s;transform-style:preserve-3d}
+.fc-inner.flip{transform:rotateY(180deg)}
+.fc-f,.fc-b{position:absolute;inset:0;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;border-radius:var(--radius-lg);border:1px solid var(--border);background:var(--surface);box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.fc-b{transform:rotateY(180deg);background:var(--surface2)}
+.fc-j{font-size:44px;font-family:'Noto Sans JP',sans-serif;line-height:1.2}
+.fc-r{font-size:13px;color:var(--text3);font-family:'Noto Sans JP',sans-serif}
+.fc-e{font-size:22px;font-weight:600;text-align:center;padding:0 1.5rem}
+.fc-hint{font-size:11px;color:var(--text3);margin-top:4px}
+.pbar{height:5px;background:var(--surface2);border-radius:999px;overflow:hidden;margin:6px 0}
+.pfill{height:100%;border-radius:999px;background:var(--blue);transition:width .35s}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:8px}
+.nav-mid{text-align:center;font-size:13px;color:var(--text2)}
+.vtbl-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:var(--radius-lg)}
+.vtbl{width:100%;border-collapse:collapse;font-size:13px;min-width:600px}
+.vtbl th{padding:10px 10px;text-align:center;font-size:11px;font-weight:600;color:var(--text2);background:var(--surface2);border-bottom:1px solid var(--border);white-space:nowrap;letter-spacing:.3px;text-transform:uppercase}
+.vtbl th:first-child{text-align:left;min-width:120px}
+.vtbl td{padding:8px 8px;border-bottom:1px solid var(--border);text-align:center;vertical-align:middle}
+.vtbl tr:last-child td{border-bottom:none}
+.vtbl td:first-child{text-align:left;font-weight:600;font-size:14px;font-family:'Noto Sans JP',sans-serif;padding-left:14px}
+.vi{width:100%;border:1px solid var(--border2);border-radius:7px;padding:5px 7px;font-size:13px;text-align:center;background:var(--surface);color:var(--text);min-width:100px;font-family:'Noto Sans JP',sans-serif;outline:none;transition:.15s}
+.vi:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.vi.ok{border-color:var(--green-border);background:var(--green-bg);color:var(--green-text)}
+.vi.no{border-color:var(--red-border);background:var(--red-bg);color:var(--red-text)}
+.vi.rev{border-color:var(--amber-border);background:var(--amber-bg);color:var(--amber-text)}
+.te-card{padding:1.25rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);margin-bottom:1rem}
+.te-en{font-size:14px;line-height:1.7;margin-bottom:8px}
+.te-note{font-size:12px;color:var(--text2);margin-bottom:10px;padding:6px 10px;background:var(--amber-bg);border-radius:7px}
+.te-ans{display:none;padding:12px 14px;background:var(--green-bg);border:1px solid var(--green-border);border-radius:var(--radius);margin-top:10px}
+.te-ans.show{display:block}
+.te-jp{font-size:18px;font-family:'Noto Sans JP',sans-serif;margin-bottom:4px}
+.te-sub{font-size:12px;color:var(--green-text)}
+.qz-q{font-size:24px;text-align:center;padding:1.5rem 1rem;font-weight:500;border:1px solid var(--border);border-radius:var(--radius-lg);margin-bottom:1.25rem;background:var(--surface);font-family:'Noto Sans JP',sans-serif}
+.qz-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1rem}
+.qz-opt{padding:13px 12px;border:1px solid var(--border2);border-radius:var(--radius);cursor:pointer;font-size:13px;font-weight:500;background:var(--surface);color:var(--text);transition:.2s;text-align:center;line-height:1.4;font-family:'Inter',sans-serif}
+.qz-opt:hover{background:var(--surface2)}.qz-opt.right{background:var(--green-bg);color:var(--green-text);border-color:var(--green-border)}
+.qz-opt.wrong{background:var(--red-bg);color:var(--red-text);border-color:var(--red-border)}
+.result-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;text-align:center}
+.big-score{font-size:60px;font-weight:700;color:var(--text);line-height:1.1;margin:1rem 0}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:1.25rem}
+@media(max-width:500px){.qz-grid{grid-template-columns:1fr}.fc-j{font-size:36px}.fc-e{font-size:18px}}
+</style>
+</head>
+<body>
+<header>
+  <span style="font-size:24px">🇯🇵</span>
+  <h1>日本語 Unit 6 Study Guide</h1>
+  <span class="jp" style="font-size:13px;color:var(--text2)">世界の国</span>
+</header>
+<div style="background:var(--surface);border-bottom:1px solid var(--border)">
+  <div class="tabs" style="max-width:760px;margin:0 auto">
+    <button class="tab on" onclick="showTab(0)">🃏 Flashcards</button>
+    <button class="tab" onclick="showTab(1)">📋 Verb Forms</button>
+    <button class="tab" onclick="showTab(2)">✏️ Translations</button>
+    <button class="tab" onclick="showTab(3)">🏆 Quiz</button>
+  </div>
+</div>
+
+<div class="content">
+
+<!-- FLASHCARDS -->
+<div class="sec on" id="sec0">
+  <div class="pills">
+    <button class="pill on" onclick="setCat(0)">🌍 Countries 国</button>
+    <button class="pill" onclick="setCat(1)">🏙️ Cities 都市</button>
+    <button class="pill" onclick="setCat(2)">💬 Adjectives 形容詞</button>
+    <button class="pill" onclick="setCat(3)">📚 Nouns 名詞</button>
+    <button class="pill" onclick="setCat(4)">👀 〜そうな forms</button>
+  </div>
+  <p style="font-size:12px;color:var(--text3);margin-bottom:6px">Click card to flip · tap arrow to advance</p>
+  <div class="fc-wrap" onclick="flipCard()">
+    <div class="fc-inner" id="fcinner">
+      <div class="fc-f">
+        <span class="fc-j" id="fcj"></span>
+        <span class="fc-r" id="fcr"></span>
+        <span class="fc-hint">tap to reveal</span>
+      </div>
+      <div class="fc-b"><span class="fc-e" id="fce"></span></div>
+    </div>
+  </div>
+  <div class="pbar"><div class="pfill" id="fcbar" style="width:0%"></div></div>
+  <div class="nav">
+    <button class="btn" onclick="fcNav(-1)">← Prev</button>
+    <div class="nav-mid">
+      <div id="fccount"></div>
+      <button class="btn" style="font-size:11px;padding:3px 10px;margin-top:5px" onclick="doShuffle()">🔀 Shuffle</button>
+    </div>
+    <button class="btn" onclick="fcNav(1)">Next →</button>
+  </div>
+</div>
+
+<!-- VERB FORM TABLE -->
+<div class="sec" id="sec1">
+  <div class="ibox">
+    <strong>可能形 Potential Form Rules</strong><br>
+    <span class="badge b1">Group 1</span> う row → え row + る &nbsp;(飲む→飲める)<br>
+    <span class="badge b2">Group 2</span> Drop る + add られる &nbsp;(食べる→食べられる)<br>
+    <span class="badge b3">Group 3</span> する→できる &nbsp;|&nbsp; 来る→来られる<br>
+    <span style="font-size:12px;margin-top:4px;display:block">⚠️ All potential verbs conjugate as Group 2 &nbsp;|&nbsp; Change <strong>を → が</strong> with potential form</span>
+  </div>
+  <div class="row">
+    <button class="btn btn-p" onclick="checkVerbs()">✓ Check answers</button>
+    <button class="btn" onclick="revealVerbs()">👁 Reveal all</button>
+    <button class="btn" onclick="resetVerbs()">↺ Reset</button>
+    <span id="vscore" style="font-size:13px;color:var(--text2)"></span>
+  </div>
+  <div class="vtbl-wrap">
+    <table class="vtbl">
+      <thead><tr>
+        <th style="text-align:left">Verb</th>
+        <th>受身 Passive<br><span style="font-weight:400;text-transform:none;letter-spacing:0">polite</span></th>
+        <th>能力 Potential<br><span style="font-weight:400;text-transform:none;letter-spacing:0">polite</span></th>
+        <th>受身 Passive<br><span style="font-weight:400;text-transform:none;letter-spacing:0">plain</span></th>
+        <th>能力 Potential<br><span style="font-weight:400;text-transform:none;letter-spacing:0">plain</span></th>
+      </tr></thead>
+      <tbody id="vtbody"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- TRANSLATIONS -->
+<div class="sec" id="sec2">
+  <p style="font-size:13px;color:var(--text2);margin-bottom:1.25rem">Translate each sentence into Japanese using polite potential form. Try first, then reveal the answer!</p>
+  <div id="telist"></div>
+</div>
+
+<!-- QUIZ -->
+<div class="sec" id="sec3">
+  <div id="qzsetup">
+    <p style="font-size:13px;font-weight:600;margin-bottom:6px">Category</p>
+    <div class="pills">
+      <button class="pill on" onclick="setQC(this,0)">All vocab</button>
+      <button class="pill" onclick="setQC(this,1)">Countries 国</button>
+      <button class="pill" onclick="setQC(this,2)">Cities 都市</button>
+      <button class="pill" onclick="setQC(this,3)">Adjectives</button>
+    </div>
+    <p style="font-size:13px;font-weight:600;margin-bottom:6px">Direction</p>
+    <div class="pills">
+      <button class="pill on" onclick="setQD(this,0)">Japanese → English</button>
+      <button class="pill" onclick="setQD(this,1)">English → Japanese</button>
+    </div>
+    <button class="btn btn-p" style="margin-top:1.25rem;padding:10px 20px" onclick="startQz()">▶ Start Quiz (10 questions)</button>
+  </div>
+  <div id="qzgame" style="display:none">
+    <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--text2);margin-bottom:6px">
+      <span id="qzprog">Q 1/10</span><span id="qzsc">Score: 0</span>
+    </div>
+    <div class="pbar"><div class="pfill" id="qzbar" style="width:0%"></div></div>
+    <div class="qz-q jp" id="qzq"></div>
+    <div class="qz-grid" id="qzopts"></div>
+    <div id="qzfb" style="font-size:14px;text-align:center;min-height:22px;font-weight:500"></div>
+  </div>
+  <div id="qzresult" style="display:none">
+    <div class="result-card">
+      <p style="font-size:14px;color:var(--text2)">Final Score</p>
+      <div class="big-score" id="qzfinal"></div>
+      <p style="font-size:15px;color:var(--text2);margin-bottom:1.5rem" id="qzmsg"></p>
+      <button class="btn btn-p" onclick="restartQz()" style="padding:10px 20px">↺ Try again</button>
+    </div>
+  </div>
+</div>
+
+</div><!-- /content -->
+
+<footer style="text-align:center;padding:2rem;font-size:12px;color:var(--text3)">
+  Japanese 3 · Unit 6: 世界の国 · Study guide · がんばって！🌸
+</footer>
+
+<script>
+const VC={
+  countries:[
+    {j:'アメリカ',r:'あめりか',e:'America / USA'},
+    {j:'イギリス',r:'いぎりす',e:'UK / England'},
+    {j:'韓国',r:'かんこく',e:'South Korea'},
+    {j:'イタリア',r:'いたりあ',e:'Italy'},
+    {j:'フランス',r:'ふらんす',e:'France'},
+    {j:'カナダ',r:'かなだ',e:'Canada'},
+    {j:'エジプト',r:'えじぷと',e:'Egypt'},
+    {j:'オーストラリア',r:'おーすとらりあ',e:'Australia'},
+    {j:'スペイン',r:'すぺいん',e:'Spain'},
+    {j:'ギリシャ',r:'ぎりしゃ',e:'Greece'},
+    {j:'インド',r:'いんど',e:'India'},
+    {j:'ベトナム',r:'べとなむ',e:'Vietnam'},
+    {j:'オランダ',r:'おらんだ',e:'Netherlands'},
+    {j:'ブラジル',r:'ぶらじる',e:'Brazil'},
+    {j:'ドイツ',r:'どいつ',e:'Germany'},
+    {j:'ロシア',r:'ろしあ',e:'Russia'},
+    {j:'スイス',r:'すいす',e:'Switzerland'},
+    {j:'ニュージーランド',r:'にゅーじーらんど',e:'New Zealand'},
+    {j:'シンガポール',r:'しんがぽーる',e:'Singapore'},
+    {j:'メキシコ',r:'めきしこ',e:'Mexico'}
+  ],
+  cities:[
+    {j:'ロンドン',r:'ろんどん',e:'London'},
+    {j:'ローマ',r:'ろーま',e:'Rome'},
+    {j:'パリ',r:'ぱり',e:'Paris'},
+    {j:'北京',r:'ぺきん',e:'Beijing'},
+    {j:'シドニー',r:'しどにー',e:'Sydney'},
+    {j:'カイロ',r:'かいろ',e:'Cairo'},
+    {j:'モスクワ',r:'もすくわ',e:'Moscow'},
+    {j:'サンフランシスコ',r:'さんふらんしすこ',e:'San Francisco'},
+    {j:'ソウル',r:'そうる',e:'Seoul'},
+    {j:'アテネ',r:'あてね',e:'Athens'},
+    {j:'ニューヨーク',r:'にゅーよーく',e:'New York'},
+    {j:'香港',r:'ほんこん',e:'Hong Kong'},
+    {j:'札幌',r:'さっぽろ',e:'Sapporo'},
+    {j:'台北',r:'たいぺい',e:'Taipei'},
+    {j:'ベニス',r:'べにす',e:'Venice'}
+  ],
+  adj:[
+    {j:'おしゃれな',r:'おしゃれな',e:'fashionable'},
+    {j:'ロマンチックな',r:'ろまんちっくな',e:'romantic'},
+    {j:'エキゾチックな',r:'えきぞちっくな',e:'exotic'},
+    {j:'歴史が古い',r:'れきしがふるい',e:'historically old / ancient'},
+    {j:'美しい',r:'うつくしい',e:'beautiful'},
+    {j:'ハイテクな',r:'はいてくな',e:'high-tech'},
+    {j:'まずしい',r:'まずしい',e:'poor / impoverished'},
+    {j:'伝統的な',r:'でんとうてきな',e:'traditional'},
+    {j:'情熱的な',r:'じょうねつてきな',e:'passionate'},
+    {j:'にぎやかな',r:'にぎやかな',e:'lively / bustling'},
+    {j:'不思議な',r:'ふしぎな',e:'mysterious / strange'},
+    {j:'あぶない',r:'あぶない',e:'dangerous'},
+    {j:'不潔な',r:'ふけつな',e:'dirty / unclean'},
+    {j:'おそろしい',r:'おそろしい',e:'frightening'},
+    {j:'洗練された',r:'せんれんされた',e:'elegant / sophisticated'},
+    {j:'自然が厳しい',r:'しぜんがきびしい',e:'nature is harsh'},
+    {j:'文化的な',r:'ぶんかてきな',e:'cultural'},
+    {j:'現代的な',r:'げんだいてきな',e:'modern'},
+    {j:'国際的な',r:'こくさいてきな',e:'international'},
+    {j:'めずらしい',r:'めずらしい',e:'unusual / rare'}
+  ],
+  nouns:[
+    {j:'国',r:'くに',e:'country / nation'},
+    {j:'都市',r:'とし',e:'city'},
+    {j:'街',r:'まち',e:'town / streets'},
+    {j:'約',r:'やく',e:'approximately'},
+    {j:'億',r:'おく',e:'hundred million'},
+    {j:'世界',r:'せかい',e:'world'},
+    {j:'島',r:'しま',e:'island'},
+    {j:'北極',r:'ほっきょく',e:'North Pole / Arctic'},
+    {j:'南極',r:'なんきょく',e:'South Pole / Antarctica'},
+    {j:'人口',r:'じんこう',e:'population'},
+    {j:'面積',r:'めんせき',e:'area / size (land)'},
+    {j:'首都',r:'しゅと',e:'capital city'}
+  ],
+  souna:[
+    {j:'おいしそうな',r:'おいしそうな',e:'looks delicious'},
+    {j:'おもしろそうな',r:'おもしろそうな',e:'looks interesting'},
+    {j:'かわいそうな',r:'かわいそうな',e:'looks pitiful / poor thing'},
+    {j:'よさそうな',r:'よさそうな',e:'looks good / seems nice'},
+    {j:'かなしそうな',r:'かなしそうな',e:'looks sad'},
+    {j:'うれしそうな',r:'うれしそうな',e:'looks happy'},
+    {j:'元気そうな',r:'げんきそうな',e:'looks energetic / healthy'}
+  ]
+};
+
+const VERBS=[
+  {v:'食べる',g:2,pp:'たべられます',po:'たべられます',rp:'たべられる',ro:'たべられる'},
+  {v:'飲む',g:1,pp:'のまれます',po:'のめます',rp:'のまれる',ro:'のめる'},
+  {v:'買う',g:1,pp:'かわれます',po:'かえます',rp:'かわれる',ro:'かえる'},
+  {v:'話す',g:1,pp:'はなされます',po:'はなせます',rp:'はなされる',ro:'はなせる'},
+  {v:'する',g:3,pp:'されます',po:'できます',rp:'される',ro:'できる'},
+  {v:'待つ',g:1,pp:'またれます',po:'まてます',rp:'またれる',ro:'まてる'},
+  {v:'書く',g:1,pp:'かかれます',po:'かけます',rp:'かかれる',ro:'かける'},
+  {v:'来る',g:3,pp:'こられます',po:'こられます',rp:'こられる',ro:'こられる'},
+  {v:'作る',g:1,pp:'つくられます',po:'つくれます',rp:'つくられる',ro:'つくれる'},
+  {v:'見る',g:2,pp:'みられます',po:'みられます',rp:'みられる',ro:'みられる'},
+  {v:'遊ぶ',g:1,pp:'あそばれます',po:'あそべます',rp:'あそばれる',ro:'あそべる'},
+  {v:'出る',g:2,pp:'でられます',po:'でられます',rp:'でられる',ro:'でられる'}
+];
+
+const TRANS=[
+  {en:'My older brother is in AP Japanese class. He <u>can speak</u> Japanese very well.',note:'Hint: speak = 話す (Group 1)',jp:'お兄さんはAPの日本語のクラスにいます。日本語がとても上手に話せます。',sub:'話せます = can speak (potential polite)'},
+  {en:'Probably (90% confidence) my mother <u>can cook</u> Korean food.',note:'Hint: probably = たぶん, cook/make = 作る (Group 1)',jp:'たぶんお母さんは韓国料理が作れると思います。',sub:'作れます = can cook/make (potential polite)'},
+  {en:'I <u>cannot go</u> to the meeting after school (放課後).',note:'Hint: go = 行く (Group 1)',jp:'放課後ミーティングに行けません。',sub:'行けません = cannot go (negative potential polite)'},
+  {en:'I <u>can\'t stop</u> playing this game now. (stop = やめる Group 2)',note:'',jp:'今このゲームがやめられません。',sub:'やめられません = cannot stop/quit (negative potential polite)'},
+  {en:'I thought I would call my father, but I <u>couldn\'t call</u> because I fell asleep.',note:'Hint: call = 電話する (Group 3), fell asleep = 寝てしまった',jp:'お父さんに電話しようと思ったが、寝てしまったので電話できませんでした。',sub:'できませんでした = could not do (negative potential past polite)'},
+  {en:'I <u>can\'t wait</u> because there\'s no time.',note:'Hint: wait = 待つ (Group 1)',jp:'時間がないので待てません。',sub:'待てません = cannot wait (negative potential polite)'},
+  {en:'<u>Can</u> you <u>write</u> your name in (= by means of) kanji?',note:'Hint: write = 書く (Group 1)',jp:'漢字で名前が書けますか。',sub:'書けますか = can you write? (potential polite question)'},
+  {en:'I <u>couldn\'t do</u> my homework yesterday because my head hurt.',note:'Hint: do = する (Group 3), head hurt = 頭が痛かった',jp:'昨日頭が痛かったから宿題ができませんでした。',sub:'できませんでした = could not do (negative potential past)'}
+];
+
+let fcCards=[],fcIdx=0,fcFlipped=false;
+let qzCat=0,qzDir=0,qzPool=[],qzIdx=0,qzScore=0,qzBusy=false;
+
+function getAllV(){return[...VC.countries,...VC.cities,...VC.adj,...VC.nouns,...VC.souna]}
+function getCatV(c){return[VC.countries,VC.cities,VC.adj,VC.nouns,VC.souna][c]}
+function shuffle(a){const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b}
+
+function showTab(n){
+  document.querySelectorAll('.sec').forEach((s,i)=>s.classList.toggle('on',i===n));
+  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('on',i===n));
+}
+
+function setCat(n){
+  document.querySelectorAll('#sec0 .pills .pill').forEach((p,i)=>p.classList.toggle('on',i===n));
+  fcCards=shuffle(getCatV(n));fcIdx=0;fcFlipped=false;
+  document.getElementById('fcinner').classList.remove('flip');renderFC();
+}
+
+function flipCard(){fcFlipped=!fcFlipped;document.getElementById('fcinner').classList.toggle('flip',fcFlipped)}
+function fcNav(d){fcFlipped=false;document.getElementById('fcinner').classList.remove('flip');fcIdx=(fcIdx+d+fcCards.length)%fcCards.length;renderFC()}
+function doShuffle(){fcCards=shuffle(fcCards);fcIdx=0;fcFlipped=false;document.getElementById('fcinner').classList.remove('flip');renderFC()}
+
+function renderFC(){
+  if(!fcCards.length)return;
+  const c=fcCards[fcIdx];
+  document.getElementById('fcj').textContent=c.j;
+  document.getElementById('fcr').textContent=(c.r&&c.r!==c.j)?c.r:'';
+  document.getElementById('fce').textContent=c.e;
+  document.getElementById('fccount').textContent=`${fcIdx+1} / ${fcCards.length}`;
+  document.getElementById('fcbar').style.width=`${((fcIdx+1)/fcCards.length)*100}%`;
+}
+
+function buildVerbs(){
+  const tb=document.getElementById('vtbody');
+  const gc=['b1','b2','b3'];const gl=['Grp 1','Grp 2','Grp 3'];
+  VERBS.forEach((v,i)=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td><span class="jp">${v.v}</span> <span class="badge ${gc[v.g-1]}">${gl[v.g-1]}</span></td>
+      <td><input class="vi" data-i="${i}-pp" placeholder="〜られます"></td>
+      <td><input class="vi" data-i="${i}-po" placeholder="〜ます"></td>
+      <td><input class="vi" data-i="${i}-rp" placeholder="〜られる"></td>
+      <td><input class="vi" data-i="${i}-ro" placeholder="〜る"></td>`;
+    tb.appendChild(tr);
+  });
+}
+
+function checkVerbs(){
+  let ok=0,tot=0;
+  ['pp','po','rp','ro'].forEach(k=>{VERBS.forEach((v,i)=>{
+    const el=document.querySelector(`[data-i="${i}-${k}"]`);if(!el)return;tot++;
+    const val=el.value.trim();if(!val)return;
+    if(val===v[k]){el.classList.remove('no','rev');el.classList.add('ok');ok++;}
+    else{el.classList.remove('ok','rev');el.classList.add('no');}
+  });});
+  document.getElementById('vscore').textContent=`✓ ${ok} / ${tot} correct`;
+}
+
+function revealVerbs(){
+  ['pp','po','rp','ro'].forEach(k=>{VERBS.forEach((v,i)=>{
+    const el=document.querySelector(`[data-i="${i}-${k}"]`);if(!el)return;
+    el.value=v[k];el.classList.remove('ok','no');el.classList.add('rev');
+  });});document.getElementById('vscore').textContent='All answers revealed';
+}
+
+function resetVerbs(){
+  document.querySelectorAll('.vi').forEach(el=>{el.value='';el.classList.remove('ok','no','rev');});
+  document.getElementById('vscore').textContent='';
+}
+
+function buildTrans(){
+  const list=document.getElementById('telist');
+  TRANS.forEach((t,i)=>{
+    const d=document.createElement('div');d.className='te-card';
+    d.innerHTML=`<div class="te-en"><strong>${i+1}.</strong> ${t.en}</div>
+      ${t.note?`<div class="te-note">${t.note}</div>`:''}
+      <button class="btn" id="tbtn${i}" onclick="toggleAns(${i})">👁 Show answer</button>
+      <div class="te-ans" id="tans${i}"><div class="te-jp jp">${t.jp}</div><div class="te-sub">${t.sub}</div></div>`;
+    list.appendChild(d);
+  });
+}
+
+function toggleAns(i){
+  const a=document.getElementById(`tans${i}`),b=document.getElementById(`tbtn${i}`);
+  const s=a.classList.toggle('show');b.textContent=s?'🙈 Hide answer':'👁 Show answer';
+}
+
+function setQC(el,n){qzCat=n;el.closest('.pills').querySelectorAll('.pill').forEach((p,j)=>p.classList.toggle('on',j===n))}
+function setQD(el,n){qzDir=n;el.closest('.pills').querySelectorAll('.pill').forEach((p,j)=>p.classList.toggle('on',j===n))}
+function getQzPool(){return[getAllV(),VC.countries,VC.cities,VC.adj][qzCat]||getAllV()}
+
+function startQz(){
+  qzPool=shuffle(getQzPool()).slice(0,10);qzIdx=0;qzScore=0;qzBusy=false;
+  document.getElementById('qzsetup').style.display='none';
+  document.getElementById('qzresult').style.display='none';
+  document.getElementById('qzgame').style.display='block';renderQz();
+}
+
+function renderQz(){
+  if(qzIdx>=qzPool.length){showQzResult();return;}
+  const c=qzPool[qzIdx];qzBusy=false;
+  document.getElementById('qzprog').textContent=`Q ${qzIdx+1}/10`;
+  document.getElementById('qzsc').textContent=`Score: ${qzScore}`;
+  document.getElementById('qzbar').style.width=`${(qzIdx/10)*100}%`;
+  document.getElementById('qzfb').textContent='';
+  document.getElementById('qzq').textContent=qzDir===0?c.j:c.e;
+  const all=getQzPool();const wrong=shuffle(all.filter(x=>x.j!==c.j)).slice(0,3);
+  const opts=shuffle([c,...wrong]);
+  const grid=document.getElementById('qzopts');grid.innerHTML='';
+  opts.forEach(o=>{
+    const btn=document.createElement('button');btn.className='qz-opt';
+    btn.textContent=qzDir===0?o.e:o.j;
+    btn.onclick=()=>answerQz(btn,o.j===c.j,c);grid.appendChild(btn);
+  });
+}
+
+function answerQz(btn,correct,c){
+  if(qzBusy)return;qzBusy=true;
+  const fb=document.getElementById('qzfb');
+  if(correct){btn.classList.add('right');qzScore++;fb.style.color='var(--green)';fb.textContent='✓ Correct!';}
+  else{
+    btn.classList.add('wrong');fb.style.color='var(--red)';
+    fb.textContent=`✗ Answer: ${qzDir===0?c.e:c.j}`;
+    document.querySelectorAll('.qz-opt').forEach(b=>{if(b.textContent===(qzDir===0?c.e:c.j))b.classList.add('right');});
+  }
+  setTimeout(()=>{qzIdx++;renderQz();},1400);
+}
+
+function showQzResult(){
+  document.getElementById('qzgame').style.display='none';
+  document.getElementById('qzresult').style.display='block';
+  document.getElementById('qzfinal').textContent=`${qzScore}/10`;
+  const msgs=['Keep practicing! がんばって！🌱','Getting there! もう少し！💪','Good work! いい感じ！😊','Great job! よくできました！⭐','Perfect! 完璧！🎉'];
+  document.getElementById('qzmsg').textContent=msgs[Math.min(4,Math.floor(qzScore/2))];
+}
+
+function restartQz(){document.getElementById('qzresult').style.display='none';document.getElementById('qzsetup').style.display='block';}
+
+setCat(0);buildVerbs();buildTrans();
+</script>
+</body>
+</html>
